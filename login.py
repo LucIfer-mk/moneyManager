@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
+import json
 
 from dashboard import dashboadr
 def login():
@@ -7,7 +8,7 @@ def login():
     window.geometry("350x400")
     window.title("MoneyManager")
     window.configure(bg="#B8B8B8")
- 
+
     img = tk.PhotoImage(file="logo.png")
     window.iconphoto(True, img)
  
@@ -34,11 +35,19 @@ def login():
 
     #Handalin Login
     def check_login():
-        user_name = "admin"
-        pass_word = "admin"
 
+        # user_name = "admin"
+        # pass_word = "admin"
+
+        def get_login_info():
+            with open("user_data.json", "r") as file:
+                data = json.load(file)
+                return data.get("username"), data.get("password")
+                        
         user = userName.get()
         pasword = passWord.get()
+
+        user_name, pass_word = get_login_info()
 
         if user_name == user and pasword == pass_word:
             window.destroy()
@@ -92,7 +101,7 @@ def login():
             reg_win.destroy()
             login()
 
-        signUp = tk.Button(reg_win, text="Login", font=("Helvetica", 12), width=15, bg="#4CA3AF", fg="white" ,justify='center', command=handle_signups)
+        signUp = tk.Button(reg_win, text="Sign up", font=("Helvetica", 12), width=15, bg="#4CA3AF", fg="white" ,justify='center', command=handle_signups)
         signUp.grid(row=5, column=0, columnspan=2, pady=20)
         reg_win.mainloop()       
 
