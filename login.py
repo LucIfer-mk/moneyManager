@@ -48,12 +48,14 @@ def login():
         pasword = passWord.get()
 
         user_name, pass_word = get_login_info()
-
-        if user_name == user and pasword == pass_word:
-            window.destroy()
-            dashboadr()
+        if user=="" and pasword == "":
+            messagebox.showerror("Missing Info", "Please Enter ID and Password")
         else:
-            messagebox.showerror("Login Failed", "Invalid Username or Password please try again")
+            if user_name == user and pasword == pass_word:
+                window.destroy()
+                dashboadr()
+            else:
+                messagebox.showerror("Login Failed", "Invalid Username or Password please try again")
 
     loginBtn = tk.Button(window, text="Login", font=("Helvetica", 12), width=15, bg="#4CA3AF", fg="white" ,justify='center', command=check_login)
     loginBtn.grid(row=4, column=0, columnspan=2, pady=20)
@@ -96,13 +98,31 @@ def login():
         password = tk.Entry(reg_win, width=30)
         password.grid(row=4, column=1, padx=10, pady=10)
 
-        # To handle signups 
+    # tO HANDLE LOGIN
+
         def handle_signups():
-            reg_win.destroy()
-            login()
+            fulllname = fullName.get()
+            mail = email.get()
+            passord = password.get()
+
+            if fulllname =="" and mail =="" and passord == "":
+              messagebox.showerror("Empty Fields", "Please Fill All The Fields")
+            else:
+                print("fuck")
+                reg_win.destroy()
+                login()
+        
 
         signUp = tk.Button(reg_win, text="Sign up", font=("Helvetica", 12), width=15, bg="#4CA3AF", fg="white" ,justify='center', command=handle_signups)
         signUp.grid(row=5, column=0, columnspan=2, pady=20)
+
+         #    To handle signups
+
+       
+
+        # 
+        
+
         reg_win.mainloop()       
 
     # Regestration button of login page

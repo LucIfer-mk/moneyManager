@@ -1,0 +1,10 @@
+Date,Description,Amount,Type
+2025-06-20,Salary,1000.0,Income
+2025-06-20,Rent,-200.0,Expense
+2025-06-20,Groceries,-100.0,Expense
+2025-06-30,Salary,1000.0,Income
+2025-06-30,Rent,-200.0,Expense
+2025-06-30,Groceries,-100.0,Expense
+2025-06-29,Salary,1000.0,Income
+2025-06-29,Rent,-200.0,Expense
+2025-06-29,Groceries,-100.0,Expense

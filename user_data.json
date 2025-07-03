@@ -1,11 +1,5 @@
 {
-  "logged_in": false,
-  "username": "Admin",
-  "password": "admin",
-  "image":"",
-  "income": 5000,
-  "expenses":[
-    {"catogery":"food", "amount":1000},
-    {"catogery": "transport", "amount":1000}
-  ]
+  "logged_in": true,
+  "username": "Manoj",
+  "password": "admin" 
 }
